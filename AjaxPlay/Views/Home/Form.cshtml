@@ -1,0 +1,15 @@
+﻿@model AjaxPlay.Models.FormModel
+<span id="status"></span>
+<br />
+@using (Ajax.BeginForm("Update", "Home", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "status" }, new { @class = "form-inline form-horizontal" }))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div class="input-append">
+        @Html.EditorFor(m => m.Description)<input type="submit" value="Go!" class="btn btn-primary add-on"
+            style="height: auto;" />
+    </div>
+    @Html.ValidationMessageFor(m => m.Description)
+        
+        
+    
+}

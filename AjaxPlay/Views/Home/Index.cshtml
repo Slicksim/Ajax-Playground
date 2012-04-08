@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@section ClientScripts{
+    function SetValidation() {
+    $.validator.unobtrusive.parse("form");
+    }
+}
+<h2>Index</h2>
+
+@Ajax.ActionLink("Test", "Form", "Home", new AjaxOptions{ UpdateTargetId = "test", OnSuccess = "SetValidation"})
+
+<div id="test" style="text-align: left;">
+    
+</div>

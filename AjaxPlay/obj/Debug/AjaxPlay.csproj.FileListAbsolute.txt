@@ -1,0 +1,10 @@
+F:\Projects\AjaxPlay\AjaxPlay\bin\AjaxPlay.dll
+F:\Projects\AjaxPlay\AjaxPlay\bin\AjaxPlay.pdb
+F:\Projects\AjaxPlay\AjaxPlay\bin\EntityFramework.dll
+F:\Projects\AjaxPlay\AjaxPlay\bin\StructureMap.dll
+F:\Projects\AjaxPlay\AjaxPlay\bin\EntityFramework.xml
+F:\Projects\AjaxPlay\AjaxPlay\bin\StructureMap.pdb
+F:\Projects\AjaxPlay\AjaxPlay\bin\StructureMap.xml
+F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\AjaxPlay.dll
+F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\AjaxPlay.pdb
