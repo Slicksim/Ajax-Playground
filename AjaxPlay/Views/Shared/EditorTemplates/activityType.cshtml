@@ -1,0 +1,18 @@
+﻿@model AjaxPlay.Models.ActivityType
+<tr>
+    <td>
+        @using (Ajax.BeginForm("ActivityType", "Configuration", null, new AjaxOptions { HttpMethod = "Post", OnSuccess = "UpdateSucceeded", OnFailure = "UpdateFailed" }, new { @class = "inline-form form-horizontal" }))
+        {
+            @Html.Hidden("Id", "0")
+            <div class="control-group">
+                <div class="input-append">
+                    @Html.TextBoxFor(m => m.Description, new {placeholder = "Description"})<button class="btn btn-primary">
+                        Go!</button><button class="btn btn-warning">
+                        Clear</button>
+                    @Html.ValidationMessageFor(m => m.Description)
+                </div>
+            </div>
+            
+        }
+    </td>
+</tr>

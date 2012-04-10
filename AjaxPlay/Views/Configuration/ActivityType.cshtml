@@ -1,0 +1,40 @@
+﻿@using AjaxPlay.Models
+@model List<ActivityType>
+<script type="text/javascript">
+    var currentRow = null;
+    $(document).ready(function () {
+        $("#elements tbody").delegate("tr", "click", null, function (row) {
+            currentRow = row = $(row.currentTarget);
+            row.parents("table").find('tfoot input[type="hidden"]').val(row.data("id"));
+            row.parents("table").find('tfoot input[type="text"]').val(row.data("description"));
+        });
+    });
+
+    function UpdateSucceeded(result, status, xhr) {
+        alert(result);
+    }
+
+    function UpdateFailed(result, status, xhr) {
+        alert(result);
+    }
+</script>
+<h2 class="well">
+    Activity Types</h2>
+<table class="table table-condensed table-striped" id="elements">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var activityType in Model)
+        {
+            @Html.DisplayFor(m => activityType, "DisplayTemplates/activityType")
+        }
+    </tbody>
+    <tfoot>
+        @{ Html.RenderPartial("EditorTemplates/activityType", new ActivityType()); }
+    </tfoot>
+</table>

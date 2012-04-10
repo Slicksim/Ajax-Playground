@@ -1,0 +1,43 @@
+﻿@using AjaxPlay.Models
+@model List<ContactReason>
+
+<script type="text/javascript">
+    var currentRow = null;
+    $(document).ready(function () {
+        $("#elements tbody").delegate("tr", "click", null, function (row) {
+            currentRow = row = $(row.currentTarget);
+            row.parents("table").find('tfoot input[type="hidden"]').val(row.data("id"));
+            row.parents("table").find('tfoot input[type="text"]').val(row.data("description"));
+        });
+    });
+
+    function UpdateSucceeded(result, status, xhr) {
+        alert(result);
+    }
+
+    function UpdateFailed(result, status, xhr) {
+        alert(result);
+    }
+</script>
+<h2 class="well">
+    Contact Reasons
+</h2>
+
+<table class="table table-condensed table-striped" id="elements">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contactReason in Model)
+        {
+            @Html.DisplayFor(m => contactReason, "DisplayTemplates/contactReason")
+        }
+    </tbody>
+    <tfoot>
+        @{ Html.RenderPartial("EditorTemplates/contactReason", new ContactReason()); }
+    </tfoot>
+</table>
