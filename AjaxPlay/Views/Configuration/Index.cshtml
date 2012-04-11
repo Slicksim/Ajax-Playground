@@ -1,12 +1,16 @@
 ﻿@model dynamic
-
 @{
     ViewBag.Title = "title";
 }
 @section ClientScripts
 {
     <script type="text/javascript">
+        $(document).ready(function() {
+            $('[rel="popover"]').popover();
+        });
+
         function SetValidation() {
+            $('[rel="popover"]').popover();
             $.validator.unobtrusive.parse("form");
             $('span.field-validation-valid, span.field-validation-error').each(function () {
                 $(this).addClass('help-inline');
@@ -29,18 +33,42 @@
                 }
             });
 
-        }               
+        }
+        function UpdateNavigation(link) {
+            $(link).parents("ul").find("li.active").removeClass("active");
+            $(link).parents("li").addClass("active");
 
+        }
     </script>
 }
 <div class="row-fluid">
     <div class="span3">
-        @Ajax.ActionLink("Activity Types", "ActivityType", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" })<br/>
-        @Ajax.ActionLink("Activity Results", "ActivityResult", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" })<br/>
-        @Ajax.ActionLink("Contact Reasons", "ContactReason", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" })
+        <ul class="nav nav-list">
+            <li class="nav-header"><i class="icon-cog"></i> Configuration</li>
+            <li class="active">
+                @Ajax.ActionLink("Activity Types", "ActivityType", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Activity Results", "ActivityResult", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Contact Reasons", "ContactReason", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+            <li class="nav-header"><i class="icon-user"></i> Access</li>
+            <li>
+                @Ajax.ActionLink("Activity Types", "ActivityType", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Activity Results", "ActivityResult", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+            <li>
+                @Ajax.ActionLink("Contact Reasons", "ContactReason", "Configuration", null, new AjaxOptions { UpdateTargetId = "gridLoad", InsertionMode = InsertionMode.Replace, OnSuccess = "SetValidation" }, new { onclick = "UpdateNavigation(this);" })
+            </li>
+        </ul>
     </div>
     <div class="span9">
-        <div id="gridLoad"></div>
+        <div id="gridLoad">
+            @{ Html.RenderAction("ActivityType", "Configuration"); }
+        </div>
     </div>
 </div>
-

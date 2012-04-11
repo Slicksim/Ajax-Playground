@@ -7,8 +7,7 @@
             <div class="control-group">
                 <div class="input-append">
                     @Html.TextBoxFor(m => m.Description, new {placeholder = "Description"})<button class="btn btn-primary">
-                        Go!</button><button class="btn btn-warning">
-                        Clear</button>
+                        Go!</button><button class="btn btn-warning" rel="popover" data-content="This will clear any changes you have made, please be careful." data-original-title="Warning!!!">Clear</button>
                     @Html.ValidationMessageFor(m => m.Description)
                 </div>
             </div>
