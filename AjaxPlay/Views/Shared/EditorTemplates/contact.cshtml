@@ -1,0 +1,9 @@
+﻿@model AjaxPlay.Models.Contact
+
+<div class="control-group">
+    <label class="control-label" for="Title">Title</label>
+    <div class="controls">
+        @Html.EditorFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+</div>

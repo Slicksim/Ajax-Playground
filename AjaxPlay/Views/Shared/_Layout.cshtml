@@ -18,6 +18,22 @@
         $.ajaxSetup({
             cache: false
         });
+        window.crm = window.crm || {};
+        window.crm.utilities = (function () {            
+            var id = 0;
+            return {
+                next: function () {
+                    return id++;
+                },
+                reset: function () {
+                    id = 0;
+                }
+            };
+        })();
+        $(document).ready(function() {
+            $('[rel="popover"]').popover();
+        });
+        
     </script>
     @RenderSection("ClientScripts", false)
     <script type="text/x-jquery-tmpl" id="labelTmpl">

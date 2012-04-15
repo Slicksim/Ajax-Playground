@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConfigurationController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
@@ -76,9 +77,14 @@
     <Compile Include="Models\ActivityResult.cs" />
     <Compile Include="Models\ActivityType.cs" />
     <Compile Include="Models\BasePanel.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactReason.cs" />
     <Compile Include="Models\EventsPanel.cs" />
+    <Compile Include="Models\Firm.cs" />
+    <Compile Include="Models\FirmApplication.cs" />
+    <Compile Include="Models\FirmContact.cs" />
     <Compile Include="Models\FormModel.cs" />
+    <Compile Include="Models\IndividualContact.cs" />
     <Compile Include="Models\TasksPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -205,6 +211,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Configuration\ContactReason.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\firmContact.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -8,3 +8,13 @@ F:\Projects\AjaxPlay\AjaxPlay\bin\StructureMap.xml
 F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\ResolveAssemblyReference.cache
 F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\AjaxPlay.dll
 F:\Projects\AjaxPlay\AjaxPlay\obj\Debug\AjaxPlay.pdb
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\AjaxPlay.dll
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\AjaxPlay.pdb
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\EntityFramework.dll
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\StructureMap.dll
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\EntityFramework.xml
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\StructureMap.pdb
+C:\Users\Simon\Ajax-Playground\AjaxPlay\bin\StructureMap.xml
+C:\Users\Simon\Ajax-Playground\AjaxPlay\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Simon\Ajax-Playground\AjaxPlay\obj\Debug\AjaxPlay.dll
+C:\Users\Simon\Ajax-Playground\AjaxPlay\obj\Debug\AjaxPlay.pdb
