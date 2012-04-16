@@ -1,4 +1,7 @@
-﻿@model dynamic
+﻿@using AjaxPlay.Code.BootStrap
+@using MVC.Web.Helper;
+@using AjaxPlay.Code;
+@model dynamic
 <div id="contactAdd" class="modal hide fade">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
@@ -7,13 +10,53 @@
         </h3>
     </div>
     <div class="modal-body">
-        @Htnml
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn btn-warning" rel="popover" data-content="This will close the contact and lose all changes." data-original-title="Warning!!!"
-          data-placement="bottom" data-dismiss="modal">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
+        <a href="#" class="btn btn-warning" rel="popover" data-content="This will close the contact and lose all changes."
+           data-original-title="Warning!!!" data-placement="bottom" data-dismiss="modal">Close</a>
+        <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
 </div>
+
+@*@Html.BootStrapModal(new BootStrapModalOptions { BackdropClickable = false, Id = "modalid", Fade = false, EscKeyCloses = false, Show = true }, null)*@
 <h2>
     title</h2>
+@using (Ajax.BeginActionLink("Index", "Contact", null, new AjaxOptions { OnComplete = "$('#modalid').modal();" }, new { @class ="btn btn-primary"}))
+{
+    <text> <i class="icon-edit icon-white"></i> Edit</text>
+}
+
+@using(Html.BeginBootStrapModal(new BootStrapModalOptions{ BackdropClickable = false, EscKeyCloses = false, Fade = true, Show = true}, new { id = "modalid"} ))
+{
+    using(Html.BeginBootStrapModalHeader(null))
+    {
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>
+            A header
+        </h3>
+    }
+    
+    using(Html.BeginBootStrapModalContent(new { id ="contentId"}))
+    {
+        <form class="inline-form form-horizontal">
+            <div class="control-group">
+                <label class="control-label">First Field</label>
+                <div class="controls">
+                    <input type="text" class="input-medium" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Second Field</label>
+                <div class="controls">
+                    <input type="text" class="input-medium" />
+                </div>
+            </div>
+        </form>
+    }
+    
+    using(Html.BeginBootStrapModalFooter(null))
+    {
+        <button class="btn btn-primary">Save Changes</button>
+        <button class="btn btn-warning" rel="popover" data-original-title="Warning!!!" data-content="<p>This is a clear popover</p>">Clear</button>
+    }
+}
