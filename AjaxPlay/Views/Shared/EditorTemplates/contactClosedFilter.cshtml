@@ -1,0 +1,49 @@
+﻿@using MVC.Web.Helper
+@model AjaxPlay.Models.ContactClosedFilter
+<div class="badge badge-inverse span3"  id="@Model.Id">
+    @using (Ajax.BeginForm("EditContactClosedFilter", "Contact", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = Model.Id }, new { data_ajax_mode = "replaceWith", @class = "inline-form form-horizontal" }))
+    {
+        <text>
+        <div class="btn-toolbar">
+            <i class="icon-tag icon-white"></i>&nbsp;Contact is
+            @Html.HiddenFor(m => m.Id)
+            <div class="btn-group" data-toggle="buttons-radio" data-toggle-name="Value">
+                <button type="button" class="btn btn-mini" value="false" onclick="return false;">
+                    Open</button>
+                <button type="button" class="btn btn-mini" value="true" onclick="return false;">
+                    Closed</button>
+            </div>
+            &nbsp;
+            @Html.Hidden("Value", "0", new { name = "Value" })
+            <div class="pull-right">
+                <a href="#" onclick="$(this).parents('form').submit();"><i class="icon-ok icon-white">
+                </i></a>
+                @using (Ajax.BeginActionLink("RemoveContactFilter", new { id = @Model.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "filters" }))
+                {
+                    <i class="icon-remove icon-white"></i>
+                }
+            </div>
+        </div>
+        </text>
+    }
+</div>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('div.btn-group[data-toggle-name=*]').each(function () {
+            var group = $(this);
+            var form = group.parents('form').eq(0);
+            var name = group.attr('data-toggle-name');
+            var hidden = $('input[name="' + name + '"]', form);
+            $('button', group).each(function () {
+                var button = $(this);
+                button.live('click', function () {
+                    hidden.val($(this).val());
+                });
+                if (button.val() == hidden.val()) {
+                    button.addClass('active');
+                }
+            });
+        });
+    });
+
+</script>

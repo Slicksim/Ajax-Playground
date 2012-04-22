@@ -17,49 +17,9 @@ namespace AjaxPlay.Code.BootStrap
 
         public bool Show { get; set; }
 
-        public string Id { get; set; }
     }
     public static class BootStrapExtensions
     {
-        //public static MvcHtmlString BootStrapModal(this HtmlHelper helper, BootStrapModalOptions modalOptions, object htmlAttributes)
-        //{
-        //    var modalBuilder = new TagBuilder("div");
-        //    modalBuilder.AddCssClass("modal");
-
-        //    modalBuilder.MergeAttribute("id", modalOptions.ModalId);
-
-        //    if(!modalOptions.Show)
-        //        modalBuilder.AddCssClass("hide");
-
-        //    if(modalOptions.Fade)
-        //        modalBuilder.AddCssClass("fade");
-
-        //    if(!modalOptions.BackdropClickable)
-        //        modalBuilder.MergeAttribute("data-backdrop", "static");
-
-        //    if(!modalOptions.EscKeyCloses)
-        //        modalBuilder.MergeAttribute("data-keyboard", "false");
-
-        //    modalBuilder.MergeAttributes(HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes));
-
-        //    var modalHeaderBuilder = new TagBuilder("div");
-        //    modalHeaderBuilder.AddCssClass("modal-header");
-        //    modalHeaderBuilder.InnerHtml = string.Format("<a class=\"close\" data-dismiss=\"modal\">×</a><h3>{0}</h3>", modalOptions.HeaderText);
-
-        //    var modalBodyBuilder = new TagBuilder("div");
-        //    modalBodyBuilder.AddCssClass("modal-contact");
-        //    modalBodyBuilder.MergeAttribute("id", modalOptions.ContentId);
-
-        //    var modalFooterBuilder = new TagBuilder("div");
-
-        //    modalFooterBuilder.AddCssClass("modal-footer");
-
-        //    modalBuilder.InnerHtml =string.Format("{0}\n{1}\n{2}", modalHeaderBuilder.ToString(TagRenderMode.Normal), modalBodyBuilder.ToString(TagRenderMode.Normal),
-        //                                         modalFooterBuilder.ToString(TagRenderMode.Normal));
-
-        //    return new MvcHtmlString(modalBuilder.ToString(TagRenderMode.Normal));
-        //}
-
         public static BootStrapModal BeginBootStrapModal(this HtmlHelper helper, BootStrapModalOptions modalOptions, object htmlAttributes)
         {
             var modalBuilder = new TagBuilder("div");

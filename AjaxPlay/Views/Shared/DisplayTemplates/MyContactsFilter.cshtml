@@ -1,0 +1,12 @@
+﻿@using MVC.Web.Helper
+@model AjaxPlay.Models.MyContactsFilter
+<div class="badge badge-inverse span2" id="@Model.Id">    
+    <i class="icon-tag icon-white"></i>&nbsp;My Contacts
+    &nbsp; 
+    <span class="pull-right">
+        @using(Ajax.BeginActionLink("RemoveContactFilter", new {id = @Model.Id}, new AjaxOptions{ HttpMethod = "Post", UpdateTargetId = "filters"}))
+        {
+            <i class="icon-remove icon-white"></i>
+        }   
+    </span>
+</div>

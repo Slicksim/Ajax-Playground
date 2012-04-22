@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Code\AjaxExtensions.cs" />
     <Compile Include="Code\BootStrapExtensions.cs" />
+    <Compile Include="Code\ContactFilterAttribute.cs" />
     <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
@@ -80,13 +81,18 @@
     <Compile Include="Models\ActivityType.cs" />
     <Compile Include="Models\BasePanel.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactClosedFilter.cs" />
+    <Compile Include="Models\ContactFilter.cs" />
     <Compile Include="Models\ContactReason.cs" />
+    <Compile Include="Models\ContactReasonFilter.cs" />
+    <Compile Include="Models\ContactTypeFilter.cs" />
     <Compile Include="Models\EventsPanel.cs" />
     <Compile Include="Models\Firm.cs" />
     <Compile Include="Models\FirmApplication.cs" />
     <Compile Include="Models\FirmContact.cs" />
     <Compile Include="Models\FormModel.cs" />
     <Compile Include="Models\IndividualContact.cs" />
+    <Compile Include="Models\MyContactsFilter.cs" />
     <Compile Include="Models\TasksPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -222,6 +228,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\firmContact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\ContactFilters.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\MyContactsFilter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\contactClosedFilter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\contactClosedFilter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\contactReasonFilter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\contactReasonFilter.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

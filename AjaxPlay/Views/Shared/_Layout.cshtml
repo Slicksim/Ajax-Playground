@@ -31,9 +31,12 @@
             };
         })();
         $(document).ready(function() {
-            $('[rel="popover"]').popover();
+            
         });
         
+        function BindElements() {
+            $('[rel="popover"]').popover();
+        }
     </script>
     @RenderSection("ClientScripts", false)
     <script type="text/x-jquery-tmpl" id="labelTmpl">

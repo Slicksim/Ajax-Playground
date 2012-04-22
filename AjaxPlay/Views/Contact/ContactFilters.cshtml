@@ -1,0 +1,10 @@
+﻿
+@model IEnumerable<AjaxPlay.Models.ContactFilter>
+           
+<div class="filters">    
+    @foreach (var contactFilter in Model)
+    {
+        @Html.DisplayFor(m => contactFilter)
+    }
+    &nbsp;
+</div>

@@ -1,0 +1,20 @@
+﻿@using AjaxPlay.Controllers
+@using MVC.Web.Helper
+@model AjaxPlay.Models.ContactReasonFilter
+<div class="badge badge-inverse span3"  id="@Model.Id">
+    @using (Ajax.BeginForm("EditContactReasonFilter", "Contact", null, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = Model.Id }, new { data_ajax_mode = "replaceWith", @class = "inline-form form-horizontal" }))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <text> <i class="icon-tag icon-white"></i>&nbsp; Reason is 
+        @Html.DropDownListFor(m => m.Value, ((ContactController)ViewContext.Controller).ContactReasons(), new { @class = "input-small" })
+        &nbsp;
+            <div class="pull-right">
+                <a href="#" onclick="$(this).parents('form').submit();"><i class="icon-ok icon-white"></i></a>
+                @using (Ajax.BeginActionLink("RemoveContactFilter", new { id = @Model.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "filters" }))
+                {
+                    <i class="icon-remove icon-white"></i>
+                }
+            </div>
+        </text>
+    }
+</div>

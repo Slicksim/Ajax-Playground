@@ -1,0 +1,17 @@
+﻿@using MVC.Web.Helper
+@model AjaxPlay.Models.ContactClosedFilter
+<div class="badge badge-inverse span2"  id="@Model.Id">
+    <i class="icon-tag icon-white"></i>&nbsp;Contact is
+    @(Model.Value ? "Closed" : "Open")
+    &nbsp;
+    <div class="pull-right" style="width: auto;">
+        @using (Ajax.BeginActionLink("EditContactClosedFilter", null, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = Model.Id }, new { data_ajax_mode = "replaceWith" }))
+        {        
+            <i class="icon-edit icon-white"></i>
+        }
+        @using (Ajax.BeginActionLink("RemoveContactFilter", new { id = @Model.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "filters" }))
+        {
+            <i class="icon-remove icon-white"></i>
+        }
+    </div>
+</div>
